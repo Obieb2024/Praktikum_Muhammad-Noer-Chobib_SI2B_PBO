@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ffdee9 0%, #ffcaca 100%);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Mencegah scrollbar saat ada animasi hati */
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.foto-kenangan {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.pesan-utama, .pesan-tambahan {
+    font-family: 'Pacifico', cursive;
+    color: #d6336c;
+}
+
+.pesan-utama {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.pesan-tambahan {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #e64980;
+}
+
+button {
+    background-color: #d6336c;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #c2255c;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+#pesan-tersembunyi {
+    margin-top: 20px;
+    color: #555;
+    font-size: 1.2em;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Animasi Hati */
+.heart {
+    position: fixed;
+    font-size: 2rem;
+    color: #e64980;
+    top: -1vh;
+    animation: fall 5s linear infinite;
+    user-select: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh);
+    }
+}
