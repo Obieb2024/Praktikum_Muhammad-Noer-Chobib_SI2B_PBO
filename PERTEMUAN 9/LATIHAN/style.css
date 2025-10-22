@@ -1,0 +1,213 @@
+/* ===== GLOBAL dan RESET ===== */
+* {
+    box-sizing: border-box;
+    /* Menggunakan font sistem modern (seperti Inter/Poppins) */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+html, body { 
+    margin: 0; 
+    padding: 0; 
+}
+body {
+    font-size: 15px;
+    color: #34495e; /* Warna teks utama: Dark Slate Blue */
+    background: #f4f6f9; /* Background lembut */
+    line-height: 1.6;
+}
+
+/* ===== Variabel Warna Modern ===== */
+:root {
+    --primary-color: #3498db; /* Biru/Cyan Aksen */
+    --secondary-bg: #ecf0f1; /* Abu-abu terang untuk header/menu */
+    --text-dark: #34495e;
+    --success-color: #2ecc71; /* Aksen Hijau */
+    --danger-color: #e74c3c; /* Aksen Merah */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Header (Judul) ===== */
+.judul {
+    background: var(--secondary-bg);
+    border-bottom: 1px solid #bdc3c7;
+    padding: 30px 24px;
+    text-align: left; /* Lebih modern, align kiri */
+}
+.judul h1 {
+    margin: 0 0 4px 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+.judul h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #7f8c8d; /* Warna abu-abu yang lebih lembut */
+}
+
+/* ===== NAVBAR ===== */
+.menu {
+    background: #ffffff; /* Warna putih bersih */
+    border-top: 1px solid #dcdfe1;
+    border-bottom: 1px solid #dcdfe1;
+    box-shadow: var(--shadow-light); /* Bayangan lembut */
+}
+.menu .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0; /* Hilangkan gap agar menu menyatu */
+}
+.menu li { position: relative; }
+.menu a {
+    display: block;
+    padding: 12px 18px; /* Padding lebih besar */
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent; /* Garis bawah transparan */
+}
+.menu li:hover > a {
+    background: #f4f6f9;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color); /* Garis bawah saat hover */
+}
+
+/* ===== Dropdown ===== */
+.menu ul ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 200px;
+    display: none;
+    background: #ffffff;
+    border: 1px solid #ecf0f1;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Bayangan yang lebih kuat */
+    border-radius: 6px; /* Sudut membulat */
+    z-index: 100;
+    overflow: hidden; /* Penting untuk border-radius */
+}
+.menu li:hover > ul { display: block; }
+.menu ul ul a {
+    padding: 10px 15px;
+    color: var(--text-dark);
+    font-weight: 400;
+    border-bottom: none; /* Hapus garis bawah bawaan */
+}
+.menu ul ul a:hover {
+    background: var(--secondary-bg);
+    color: var(--primary-color);
+}
+
+/* ===== Container utama ===== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 24px;
+}
+
+/* ===== Tombol Tambah ===== */
+a.tombol, .tombol {
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    margin: 20px 0 22px 0;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.tombol:hover {
+    text-decoration: none;
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(52, 152, 219, 0.4);
+}
+
+/* ===== Heading Data ===== */
+h3 {
+    margin: 12px 0 8px;
+    font-size: 18px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* ===== Tabel Modern ===== */
+.table {
+    width: 100%;
+    border-collapse: separate; /* Gunakan separate untuk border-radius */
+    border-spacing: 0;
+    background: #fff;
+    margin-top: 10px;
+    border-radius: 8px; /* Sudut membulat */
+    overflow: hidden; /* Penting untuk border-radius */
+    box-shadow: var(--shadow-light);
+}
+.table th, .table td {
+    padding: 12px 15px;
+    border: none; /* Hapus border internal */
+    border-bottom: 1px solid #ecf0f1; /* Garis pemisah antar baris */
+    vertical-align: middle;
+}
+.table th {
+    background: var(--secondary-bg);
+    font-weight: 600;
+    text-align: left;
+    font-size: 13px;
+    color: #7f8c8d;
+    text-transform: uppercase;
+}
+.table tr:last-child td { border-bottom: none; } /* Hapus garis di baris terakhir */
+.table tr:hover td { background: #f9fbfc; } /* Efek hover pada baris */
+
+/* ===== Opsi Edit/Hapus ===== */
+a.edit, a.hapus {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+a.edit { 
+    color: #fff; 
+    background: #3498db; 
+}
+a.hapus { 
+    color: #fff; 
+    background: #e74c3c; 
+}
+a.edit:hover { 
+    background: #2980b9; 
+    text-decoration: none;
+}
+a.hapus:hover { 
+    background: #c0392b; 
+    text-decoration: none;
+}
+
+/* ===== Utility spacing ===== */
+.br { height: 10px; }
+.mt-8 { margin-top: 8px; }
+.mb-8 { margin-bottom: 8px; }
+
+/* ===== Responsif ===== */
+@media (max-width: 768px) {
+    .menu ul { flex-wrap: wrap; }
+    .container { padding: 14px; }
+    .table th, .table td { padding: 8px 10px; font-size: 12px; }
+    .judul h1 { font-size: 22px; }
+    .judul { text-align: center; }
+}
